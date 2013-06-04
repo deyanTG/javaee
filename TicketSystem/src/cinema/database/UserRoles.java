@@ -14,32 +14,33 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-
 @Entity
-@Table (name = "USERROLES")
+@Table(name = "USERROLES")
 public class UserRoles implements Serializable {
 	private static final long serialVersionUID = -7846215096792524127L;
+	// @Id
+	// @GeneratedValue (strategy = GenerationType.AUTO)
+	// @Column (name = "ID")
 	@Id
-	@GeneratedValue (strategy = GenerationType.AUTO)
-	@Column (name = "ID")
+	@Column(name = "role_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long personID;
-	@Column (name = "USERNAME")
-    private String username;
-	@Column (name = "ROLE")
-    private String role;
-		
+	@Column(name = "USERNAME")
+	private String username;
+	@Column(name = "ROLE")
+	private String role;
 
-    public UserRoles() {
-    }
+	public UserRoles() {
+	}
 
-    public UserRoles(String username, String role) {
-    	
-    	this.username = username;
-    	this.role = role;
-    	
-    }
-    
-    public String getUsername() {
+	public UserRoles(String username, String role) {
+
+		this.username = username;
+		this.role = role;
+
+	}
+
+	public String getUsername() {
 		return username;
 	}
 
@@ -61,5 +62,5 @@ public class UserRoles implements Serializable {
 
 	public void setRole(String role) {
 		this.role = role;
-	}    
+	}
 }

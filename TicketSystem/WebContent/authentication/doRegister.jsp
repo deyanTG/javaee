@@ -4,7 +4,6 @@
 <%@page import="cinema.database.CinemaDAO"%>
 <%@page import="cinema.database.Person"%>
 <%
-
 	CinemaDAO dao = (CinemaDAO) application.getAttribute("cinemaDBAO");
 
 	String str1 = request.getParameter("t1");
@@ -13,11 +12,11 @@
 	Person person = new Person();
 	person.setUsername(str1);
 	person.setPassword(str2);
-	System.err.println(person.getUsername());
-	System.err	.println(person.getPassword());
-	UserRoles role = new UserRoles(str1, "user");
+	UserRoles role = new UserRoles();
+	role.setRole("user");
+	role.setUsername(person.getUsername());
+	person.setRoles(role);
 	dao.createPerson(person);
-	dao.createRoleForPerson(role);
 %>
 <jsp:forward page="successful_registration.jsp"></jsp:forward>
 

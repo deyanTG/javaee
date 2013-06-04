@@ -202,7 +202,17 @@ public class CinemaDAOImpl
 	}
 
 	private void initiateCinema() {
-
+		Person p = new Person();
+		p.setUsername("cnow");
+		p.setPassword("ag4594");
+		
+		UserRoles role = new UserRoles();
+		role.setRole("user");
+		role.setUsername(p.getUsername());
+		
+		p.setRoles(role);
+		insertEntity(p);
+/*
 		Cinema cinema = new Cinema("TU-Cinema", "Sofia Carigradsko shose 115",
 				3592123456l);
 		insertEntity(cinema);
@@ -291,6 +301,7 @@ public class CinemaDAOImpl
 		insertEntity(role1);
 		UserRoles role2 = new UserRoles("admin1", "admin");
 		insertEntity(role2);
+	*/
 	}
 
 	// ----- HELPER methods
