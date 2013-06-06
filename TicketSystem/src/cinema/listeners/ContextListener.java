@@ -26,7 +26,7 @@ public final class ContextListener implements ServletContextListener {
 			context = event.getServletContext();
 			EntityManagerFactory emf = Persistence.createEntityManagerFactory("cinemaDatabase");
 			CinemaDAO cinemaDBAO = new CinemaDAOImpl(emf.createEntityManager());
-			//context.setAttribute("hitCounter", new Counter());
+			context.setAttribute("test", "test");
 			context.setAttribute("cinemaDBAO", cinemaDBAO);
 		} catch (Exception ex) {
 			System.err.println("Couldn't create bookstore database bean: "

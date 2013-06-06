@@ -137,7 +137,7 @@
 				for(Reservation reservation : reservations){
     %>
 					<tr>
-						<td><%=reservation.getPerson().getName()%></td>
+						<td><%=reservation.getPerson().getUsername()%></td>
 						<td><%=reservation.getShowing().getMovie().getMovieTitle()%></td>
 						<td><%=reservation.getShowing().getHall().getHallNumber()%></td>
 						<td><%=reservation.getSeat().getSeatNumber()%></td>

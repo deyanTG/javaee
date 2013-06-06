@@ -12,7 +12,7 @@ import java.util.List;
 
 public interface CinemaDAO {
 
-
+	
 	public Showing getShowing(long showingId);
 	
 	public void deleteShowing(long showingId);

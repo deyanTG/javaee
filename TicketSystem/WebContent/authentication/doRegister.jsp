@@ -16,7 +16,9 @@
 	role.setRole("user");
 	role.setUsername(person.getUsername());
 	person.setRoles(role);
-	dao.createPerson(person);
+	if(dao.getPerson(person.getUsername()) == null){
+		dao.createPerson(person);
+	}
 %>
 <jsp:forward page="successful_registration.jsp"></jsp:forward>
 

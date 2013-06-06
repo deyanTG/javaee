@@ -132,7 +132,7 @@
 								<%} else {%>
 									<td>no</td>
 								<%} %>
-									<td><%=reservation.getPerson().getName()%></td>
+									<td><%=reservation.getPerson().getUsername()%></td>
 								</tr>
 						
 			<%

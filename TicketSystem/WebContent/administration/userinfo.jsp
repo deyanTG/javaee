@@ -54,8 +54,7 @@
 					} else {
 				%>
 				<p>Hello, guest</p>
-				<a
-					href="/TicketSystem/authentication/register.jsp">Register</a>
+				<a href="/TicketSystem/authentication/register.jsp">Register</a>
 				<%
 					}
 				%>
@@ -123,7 +122,7 @@
 					for (Reservation reservation : reservations) {
 				%>
 				<tr>
-					<td><%=reservation.getPerson().getName()%></td>
+					<td><%=reservation.getPerson().getUsername()%></td>
 					<td><%=reservation.getIsPaid()%></td>
 					<td><%=reservation.getIsUsed()%></td>
 					<td><%=reservation.getShowing().getMovie()

@@ -2,8 +2,11 @@ package cinema.util;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
-public class MD5Digest {
+import javax.persistence.TypedQuery;
+
+public class Utils {
 	public static String transform(String original) {
 		MessageDigest md = null;
 		try {
@@ -22,4 +25,12 @@ public class MD5Digest {
 		}
 		return sb.toString();
 	}
+	 public static <T> T getSingleResultOrNull(TypedQuery<T> query) {
+		    query.setMaxResults(1);
+		    List<T> list = query.getResultList();
+		    if (list.isEmpty()) {
+		        return null;
+		    }
+		    return list.get(0);
+		}
 }

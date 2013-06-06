@@ -18,7 +18,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import cinema.util.MD5Digest;
+import cinema.util.Utils;
 
 @Entity
 @Table(name = "PERSON")
@@ -70,7 +70,7 @@ public class Person implements Serializable {
 
 	public void setPassword(String password) {
 		// this.password = MD5Digest.digestPassword(password);
-		this.password = MD5Digest.transform(password);
+		this.password = Utils.transform(password);
 	}
 
 	public List<Reservation> getReservation() {
